@@ -9,6 +9,9 @@ import com.bumptech.glide.Glide;
 import com.example.yeyson.rappiinterview.FilmApp;
 import com.example.yeyson.rappiinterview.R;
 import com.example.yeyson.rappiinterview.event.PopularDetailEvent;
+import com.example.yeyson.rappiinterview.event.SearchDetailEvent;
+import com.example.yeyson.rappiinterview.event.TopRatedDetailEvent;
+import com.example.yeyson.rappiinterview.event.UpcomingDetailEvent;
 import com.example.yeyson.rappiinterview.injector.detail.DaggerDetailComponent;
 import com.example.yeyson.rappiinterview.util.Constants;
 import com.example.yeyson.rappiinterview.util.RxBus;
@@ -69,7 +72,7 @@ public class FilmDetailActivity extends AppCompatActivity {
                                                 + Constants.IMAGE_W780
                                                 + ((PopularDetailEvent) event).getResults().getBackdrop_path())
                                         .into(coverImage);
-                            }/* else if (event instanceof TopRatedDetailEvent) {
+                            } else if (event instanceof TopRatedDetailEvent) {
                                 detailTitle.setText(((TopRatedDetailEvent) event).getResults().getTitle());
                                 releaseDate.setText(((TopRatedDetailEvent) event).getResults().getRelease_date());
                                 detailOverview.setText(((TopRatedDetailEvent) event).getResults().getOverview());
@@ -121,7 +124,7 @@ public class FilmDetailActivity extends AppCompatActivity {
                                                 + ((SearchDetailEvent) event).getResults().getBackdropPath())
                                         .into(coverImage);
                             }
-                            */
+
 
                         },
                         e -> Timber.e(e.getMessage())));
