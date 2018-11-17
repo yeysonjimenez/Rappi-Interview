@@ -69,57 +69,6 @@ public class FilmDetailActivity extends AppCompatActivity {
                                                 + Constants.IMAGE_W780
                                                 + ((PopularDetailEvent) event).getResults().getBackdrop_path())
                                         .into(coverImage);
-                            } else if (event instanceof TopRatedDetailEvent) {
-                                detailTitle.setText(((TopRatedDetailEvent) event).getResults().getTitle());
-                                releaseDate.setText(((TopRatedDetailEvent) event).getResults().getRelease_date());
-                                detailOverview.setText(((TopRatedDetailEvent) event).getResults().getOverview());
-
-                                Glide.with(this)
-                                        .load(Constants.IMAGE_BASE_URL
-                                                + Constants.IMAGE_W342
-                                                + ((TopRatedDetailEvent) event).getResults().getPoster_path())
-
-                                        .into(detailBackdrop);
-
-                                Glide.with(this)
-                                        .load(Constants.IMAGE_BASE_URL
-                                                + Constants.IMAGE_W780
-                                                + ((TopRatedDetailEvent) event).getResults().getBackdrop_path())
-                                        .into(coverImage);
-                            } else if (event instanceof UpcomingDetailEvent) {
-                                detailTitle.setText(((UpcomingDetailEvent) event).getResults().getTitle());
-                                releaseDate.setText(((UpcomingDetailEvent) event).getResults().getRelease_date());
-                                detailOverview.setText(((UpcomingDetailEvent) event).getResults().getOverview());
-
-                                Glide.with(this)
-                                        .load(Constants.IMAGE_BASE_URL
-                                                + Constants.IMAGE_W342
-                                                + ((UpcomingDetailEvent) event).getResults().getPoster_path())
-
-                                        .into(detailBackdrop);
-
-                                Glide.with(this)
-                                        .load(Constants.IMAGE_BASE_URL
-                                                + Constants.IMAGE_W780
-                                                + ((UpcomingDetailEvent) event).getResults().getBackdrop_path())
-                                        .into(coverImage);
-                            } else if (event instanceof SearchDetailEvent) {
-                                detailTitle.setText(((SearchDetailEvent) event).getResults().getTitle());
-                                releaseDate.setText(((SearchDetailEvent) event).getResults().getReleaseDate());
-                                detailOverview.setText(((SearchDetailEvent) event).getResults().getOverview());
-
-                                Glide.with(this)
-                                        .load(Constants.IMAGE_BASE_URL
-                                                + Constants.IMAGE_W342
-                                                + ((SearchDetailEvent) event).getResults().getPosterPath())
-
-                                        .into(detailBackdrop);
-
-                                Glide.with(this)
-                                        .load(Constants.IMAGE_BASE_URL
-                                                + Constants.IMAGE_W780
-                                                + ((SearchDetailEvent) event).getResults().getBackdropPath())
-                                        .into(coverImage);
                             }
                         },
                         e -> Timber.e(e.getMessage())));
