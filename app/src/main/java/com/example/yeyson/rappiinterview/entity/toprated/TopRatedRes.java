@@ -4,7 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class TopRatedRes {
+import io.realm.RealmObject;
+
+public class TopRatedRes  {
     @SerializedName("page")
     private int page;
 

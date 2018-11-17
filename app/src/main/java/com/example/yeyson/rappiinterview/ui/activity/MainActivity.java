@@ -16,6 +16,7 @@ import com.example.yeyson.rappiinterview.mvp.view.search.ISearchView;
 import com.example.yeyson.rappiinterview.ui.adapter.AutoCompleteAdapter;
 import com.example.yeyson.rappiinterview.ui.adapter.ViewPagerAdapter;
 import com.example.yeyson.rappiinterview.ui.fragment.PopularFragment;
+import com.example.yeyson.rappiinterview.ui.fragment.TopRatedFragment;
 import com.example.yeyson.rappiinterview.util.RxBus;
 import com.google.android.material.tabs.TabLayout;
 
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements ISearchView {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new PopularFragment(), "Popular");
-        //adapter.addFragment(new TopRatedFragment(), "Top Rated");
+        adapter.addFragment(new TopRatedFragment(), "Top Rated");
         //adapter.addFragment(new UpcomingFragment(), "Upcoming");
         viewPager.setAdapter(adapter);
     }

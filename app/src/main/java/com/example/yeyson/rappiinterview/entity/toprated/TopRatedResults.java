@@ -2,9 +2,10 @@ package com.example.yeyson.rappiinterview.entity.toprated;
 
 import com.google.gson.annotations.SerializedName;
 
+import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
-public class TopRatedResults {
+public class TopRatedResults extends RealmObject {
     @SerializedName("poster_path")
     private String poster_path;
 
