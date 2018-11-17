@@ -7,6 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
+        classpath "io.realm:realm-gradle-plugin:5.4.1"
         classpath 'com.android.tools.build:gradle:3.2.1'
         
 
@@ -19,9 +20,63 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        maven { url "https://jitpack.io" }
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    // App Version
+    versionMajor = 1
+    versionMinor = 0
+    versionBuild = 0
+    versionCode = versionMajor * 10000 + versionMinor * 1000 + versionBuild
+    versionName = "${versionMajor}.${versionMinor}.${versionBuild}"
+
+    // SDK Versions
+    buildToolsVersion = '27.0.0'
+    compileSdkVersion = 28
+    targetSdkVersion = 27
+    minSdkVersion = 24
+
+    // Dependency Versions
+
+    rxjavaVersion = '1.2.7'
+    rxAndroidVersion = '1.0.1'
+    daggerVersion = '2.9'
+    daggerCompilerVersion = '2.9'
+    butterKnifeVersion = '9.0.0-SNAPSHOT'
+
+    retrofitVersion = '2.2.0'
+    retrofitRxAdapterVersion = '2.2.0'
+    gsonConverterVersion = '2.1.0'
+    okhttpVersion = '3.4.1'
+    glideVersion = '4.8.0'
+    timberVersion = '4.5.1'
+
+    // Dependencies
+
+    dagger = "com.google.dagger:dagger:$daggerVersion"
+    daggerCompiler = "com.google.dagger:dagger-compiler:$daggerCompilerVersion"
+    rxjava = "io.reactivex:rxjava:$rxjavaVersion"
+    rxAndroid = "io.reactivex:rxandroid:$rxAndroidVersion"
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    retrofitRxAdapter = "com.squareup.retrofit2:adapter-rxjava:$retrofitRxAdapterVersion"
+    retrofitLogging = "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    gsonConverter = "com.squareup.retrofit2:converter-gson:$gsonConverterVersion"
+    okhttp = "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    butterKnife = "com.jakewharton:butterknife:$butterKnifeVersion"
+    butterKnifeCompiler = "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
+    glide = "com.github.bumptech.glide:glide:$glideVersion"
+    timber = "com.jakewharton.timber:timber:$timberVersion"
 }
