@@ -2,6 +2,7 @@ package com.example.yeyson.rappiinterview.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +53,6 @@ public class PopularRecyclerViewAdapter extends RecyclerView.Adapter<PopularRecy
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         PopularResults results = resultsList.get(position);
-
         holder.title.setText(results.getTitle());
         holder.year.setText(results.getRelease_date());
 

@@ -2,4 +2,7 @@
     <string name="app_name">RappiInterview</string>
     <string name="overview">Overview</string>
     <string name="search">Search</string>
+    <string name="Popular">Popular</string>
+    <string name="TopRated">TopRated</string>
+    <string name="Upcommming">Upcoming</string>
 </resources>

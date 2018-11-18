@@ -41,7 +41,7 @@ public class UpcomingRecyclerViewAdapter  extends RecyclerView.Adapter<UpcomingR
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_movies, parent, false);
+                .inflate(R.layout.film_item, parent, false);
 
         return new ViewHolder(itemView);
     }
