@@ -70,8 +70,6 @@ public class MainActivity extends AppCompatActivity implements ISearchView, IfPo
     @BindView(R.id.popular_movies_recyclerView) RecyclerView recyclerView;
     @BindView(R.id.popularProgress)
     ProgressBar progressBar;
-    //@BindView(R.id.viewPager)
-    //ViewPager viewPager;
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
 
@@ -98,8 +96,6 @@ public class MainActivity extends AppCompatActivity implements ISearchView, IfPo
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setHomeButtonEnabled(true);
 
-        //setupViewPager(viewPager);
-        //tabLayout.setupWithViewPager(viewPager);
     }
 
     @SuppressLint("RestrictedApi")
@@ -144,7 +140,6 @@ public class MainActivity extends AppCompatActivity implements ISearchView, IfPo
     }
 
     private void initInjector() {
-        //presenterPopular.loadPopularMovies();
 
         DaggerSearchComponent.builder()
                 .appComponent(FilmApp.get(this).getAppComponent())
@@ -153,10 +148,7 @@ public class MainActivity extends AppCompatActivity implements ISearchView, IfPo
                 .topRatedModule(new TopRatedModule(this))
                 .upcomingModule(new UpcomingModule(this))
                 .build().inject(this);
-        /*DaggerPopularComponent.builder()
-                .appComponent(FilmApp.get(this).getAppComponent())
-                .popularModule(new PopularModule(this))
-                .build().inject(this);*/
+
     }
 
     @Override
@@ -204,47 +196,5 @@ public class MainActivity extends AppCompatActivity implements ISearchView, IfPo
     }
 
 
-
-
-
-
-
-    /*@Override
-    public void showProgress() {
-    }
-
-    @Override
-    public void hideProgress() {
-    }
-
-    @Override
-    public void showUpComingMovies(List<UpcomingResults> topRatedResultsList) {
-
-        LinearLayoutManager layoutManager3 = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView recyclerView3 = findViewById(R.id.recyclerView3);
-        recyclerView3.setLayoutManager(layoutManager3);
-        UpcomingRecyclerViewAdapter adapter3 = new UpcomingRecyclerViewAdapter(topRatedResultsList, getBaseContext(), bus);
-        recyclerView3.setAdapter(adapter3);
-    }
-
-    @Override
-    public void showTopRatedMovies(List<TopRatedResults> topRatedResultsList) {
-        LinearLayoutManager layoutManager2 = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView recyclerView2 = findViewById(R.id.recyclerView2);
-        recyclerView2.setLayoutManager(layoutManager2);
-        TopRatedRecyclerViewAdapter adapter2 = new TopRatedRecyclerViewAdapter(topRatedResultsList,getBaseContext(), bus);
-        recyclerView2.setAdapter(adapter2);
-    }
-
-    @Override
-    public void showPopularMovies(List<PopularResults> popularResultsList) {
-        Log.e("datos","tambien");
-        Log.e("datos",""+popularResultsList.size());
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(layoutManager);
-        PopularRecyclerViewAdapter adapter = new PopularRecyclerViewAdapter(popularResultsList, getBaseContext(), bus);
-        recyclerView.setAdapter(adapter);
-    }*/
 }
 
